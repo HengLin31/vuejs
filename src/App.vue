@@ -1,6 +1,13 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
+
+    <hr>
+    <button class="btn btn-primary">submit</button>
+    <button class="btn btn-success">use</button>
+    <button class="btn btn-danger">note</button>
+    <hr>
+
     <router-view/>
   </div>
 </template>
