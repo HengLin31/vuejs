@@ -1,13 +1,17 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-
-    <hr>
-    <button class="btn btn-primary">submit</button>
-    <button class="btn btn-success">use</button>
-    <button class="btn btn-danger">note</button>
-    <hr>
-
+    <p>
+      <router-link to="/">
+        <button class="btn btn-primary">Home</button>
+      </router-link>
+      <router-link to="/news">
+        <button class="btn btn-success">News</button>
+      </router-link>
+      <router-link to="/about">
+        <button class="btn btn-danger">About</button>
+      </router-link>
+    </p>
     <router-view/>
   </div>
 </template>
