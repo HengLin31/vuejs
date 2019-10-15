@@ -1,5 +1,8 @@
 <template>
   <div class="hello">
+    <ul>
+      <li v-for="item in items" :key="item">{{item}}</li>
+    </ul>
     <pre>{{content}}</pre>
   </div>
 </template>
@@ -9,16 +12,14 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      content: ''
+      items: []
     }
   },
   mounted () {
     this.axios.get('https://opendata.cwb.gov.tw/api/v1/rest/datastore/O-A0001-001?Authorization=rdec-key-123-45678-011121314').then(body => {
-      let result = []
       body.data.records.location.forEach(element => {
-        result.push(element.locationName)
+        this.items.push(element.locationName)
       })
-      this.content = result.join(',')
     })
   }
 }
