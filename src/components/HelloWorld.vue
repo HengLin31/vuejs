@@ -3,7 +3,6 @@
     <ul>
       <li v-for="item in items" :key="item">{{item}}</li>
     </ul>
-    <pre>{{content}}</pre>
   </div>
 </template>
 
@@ -16,10 +15,8 @@ export default {
     }
   },
   mounted () {
-    this.axios.get('https://opendata.cwb.gov.tw/api/v1/rest/datastore/O-A0001-001?Authorization=rdec-key-123-45678-011121314').then(body => {
-      body.data.records.location.forEach(element => {
-        this.items.push(element.locationName)
-      })
+    this.axios.get('http://localhost:3000/contents').then(res => {
+      this.items = res.data
     })
   }
 }
