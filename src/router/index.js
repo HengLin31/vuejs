@@ -1,8 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
-import News from '@/components/News'
-import About from '@/components/About'
+import DataList from '@/components/DataList'
+import DataEdit from '@/components/DataEdit'
 
 Vue.use(Router)
 
@@ -10,18 +9,17 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      name: 'list',
+      component: DataList
     },
     {
-      path: '/news',
-      name: 'News',
-      component: News
+      path: '/update/:id',
+      name: 'update',
+      component: DataEdit
     },
     {
-      path: '/about',
-      name: 'About',
-      component: About
+      path: '*',
+      redirect: '/'
     }
   ]
 })
